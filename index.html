@@ -1,0 +1,133 @@
+<html>
+
+<head>
+<meta charset="utf-8" />
+<title>James Scott</title>
+<meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
+
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+
+<style>
+   body { margin: 0; padding: 0; font-family: "Source Sans Pro", serif;}
+</style>
+<link rel="stylesheet" type="text/css" href="jamesefs_io.css">
+
+</head>
+
+<body>
+
+<div id="head-container">
+<div id="main-header">James Scott</div>
+</div>
+
+<div id="card-container">
+
+<div class="project-card" id="outwhere-card">
+	<div class="card-vis" onclick="window.open('https://www.outwhere.xyz/?filterByTopic=true');">
+		<div id='outwhere-logo'>
+			<div id="oc1" class="ow-circle"></div>
+			<div id="oc2" class="ow-circle"></div>
+			<div id="oc3" class="ow-circle"></div>
+			<div id="oc4" class="ow-circle"></div>
+			<div id="oc5" class="ow-circle"></div>
+			<div id="oc6" class="ow-circle"></div>
+			<div id="oc7" class="ow-circle"></div>
+			<div id="oc8" class="ow-circle"></div>
+			<div id="oc9" class="ow-circle"></div>
+			<div id="oc10" class="ow-circle"></div>
+			<div id="oc11" class="ow-circle"></div>
+			<div id="oc12" class="ow-circle"></div>
+			<div id="oc13" class="ow-circle"></div>
+			<div id="oc14" class="ow-circle"></div>
+			<div id="oc15" class="ow-circle"></div>
+			<div id="oc16" class="ow-circle"></div>
+        </div></div>
+	<div class="card-title">Out Where?</div>
+<div class='info-icon' onclick="projInfo(this,'outwhere');">i</div>
+</div>
+<div class="project-card" id="ukbut-card">
+	<div class="card-vis" onclick="window.open('https://ukbutterflies.netlify.app/');">
+		<div class="butterfly-icon">
+            <div class="bwing bwing-a"></div>
+            <div class="bwing bwing-b"></div>
+            <div class="bwing bwing-c"></div>
+            <div class="bwing bwing-d"></div>
+            <div class="bfly-body"></div>
+            <div class="bfly-antenna-a"></div>
+            <div class="bfly-antenna-b"></div>
+        </div>
+	</div>
+	<div class="card-title">UK Butterflies</div>
+<div class='info-icon' onclick="projInfo(this,'ukbut');">i</div>
+</div>
+<div class="project-card" id="chemeq-card">
+	<div class="card-vis" onclick="window.open('https://acidreactions.netlify.app/');">
+		<img class="card-img" src="images/chemeq.JPG">
+	</div>
+	<div class="card-title">Chemical Equations</div>
+<div class='info-icon' onclick="projInfo(this,'chemeq');">i</div>
+</div>
+<div class="project-card" id="rgbdmc-card">
+	<div class="card-vis" onclick="window.open('https://dmc-to-rgb.netlify.app/');">
+		<img class="card-img" src="images/rgb_dmc.JPG">
+	</div>
+	<div class="card-title">RGB to DMC</div>
+<div class='info-icon' onclick="projInfo(this,'rgbdmc');">i</div>
+</div>
+<div class="project-card" id="otmoor-card">
+	<div class="card-vis" onclick="window.open('https://otm-sight-tw.netlify.app/');">
+		<img class="card-img" src="images/otmoor.png">
+	</div>
+	<div class="card-title">Otmoor Tweets</div>
+<div class='info-icon' onclick="projInfo(this,'otmoor');">i</div>
+</div>
+<div class="project-card" id="covid-card">
+	<div class="card-vis" onclick="window.open('https://covid-preprint-lda.netlify.app/');">
+		<img class="card-img" src="images/covidpaper.JPG">
+	</div>
+	<div class="card-title">COVID Preprints</div>
+<div class='info-icon' onclick="projInfo(this,'covid');">i</div>
+</div>
+</div>
+
+<div id="popup-overlay">
+<div id="popup-info"><div id="popup-close">×</div></div>
+</div>
+
+<script>
+for (i=1;i<17;i++){
+  document.getElementById(`oc${i}`).style.animationDelay = `${(i-1)/32}s`;
+}
+
+var infoForProjects = {
+	'outwhere':'Interactive map of over 19,000 nature reserves, woodlands, SSSIs and more.<br><br>Explore local species sightings, find the best places in the UK to see a species and filter by characteristic species "topics".<br><br>Meet in the middle: draw isochrones to find somewhere within a certain drive time of multiple places',
+	'ukbut':'Visualizing UK butterfly observations by month and top locations, using HTML canvas (javascript/html/css, no plotting libraries).<br><br>Data from NBN atlas, data preparation in python',
+	'chemeq':'Game for completing and/or balancing word and symbol equations of acid and displacement reactions, made for a secondary school teacher.<br><br>Equations generated and balanced programatically in python from possible reactants and products.',
+	'rgbdmc':'get the RGB of pixels in an image, and see the most similar DMC thread colours',
+	'otmoor':'Bar chart showing mentions of bird species at Otmoor. Tweets scraped using the snscrape library and visualized with Plotly.',
+	'covid':'Topic Modelling of COVID preprints, using Latent Dirichlet Allocation. Inspired by Daniel Wolffram\'s <a href="https://discovid.ai/search" target="blank_">discovid.ai</a>.'
+}
+
+function projInfo(infoDiv, projName) {
+	console.log(projName);
+	console.log(infoForProjects[projName]);
+
+	var pInfo = document.getElementById("popup-info");
+	pInfo.innerHTML = infoForProjects[projName] + '<div id="popup-close" onclick="hidePopup();">×</div>';
+	pInfo.style.visibility = 'visible';
+	pInfo.parentElement.style.visibility = 'visible';
+}
+
+function hidePopup() {
+	var pInfo = document.getElementById("popup-info");
+	pInfo.innerHTML = '<div id="popup-close" onclick="hidePopup();">×</div>';
+	pInfo.style.visibility = 'hidden';
+	pInfo.parentElement.style.visibility = 'hidden';
+}
+
+</script>
+
+</body>
+</html>
