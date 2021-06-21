@@ -55,7 +55,13 @@
 			<div class="card-title">Out Where?</div>
 			<div class='info-icon' onclick="projInfo(this,'outwhere');">i</div>
 		</div>
-
+		<div class="project-card" id="football-viz-card">
+			<div class="card-vis" onclick="window.open('https://jamesefscott.github.io/football-viz/');">
+				<img class="card-img" src="images/football-viz.jpg">
+			</div>
+			<div class="card-title">Football Viz</div>
+			<div class='info-icon' onclick="projInfo(this,'fbviz');">i</div>
+		</div>
 		<div class="project-card" id="species-quiz-card">
 			<div class="card-vis" onclick="window.open('https://species-quiz.netlify.app/');">
 				<img class="card-img" src="images/ladybird.png">
@@ -129,7 +135,8 @@
 			'rgbdmc': 'get the RGB of pixels in an image, and see the most similar DMC thread colours',
 			'otmoor': 'Bar chart showing mentions of bird species at Otmoor. Tweets scraped using the snscrape library and visualized with Plotly.',
 			'covid': 'Topic Modelling of COVID preprints, using Latent Dirichlet Allocation. Inspired by Daniel Wolffram\'s <a href="https://discovid.ai/search" target="blank_">discovid.ai</a>.',
-			'spquiz': 'Species identification quiz, with varying images fetched using iNaturalist API.<br><br>Taxonomy filter with a D3.js sunburst vizualisation'
+			'spquiz': 'Species identification quiz, with varying images fetched using iNaturalist API.<br><br>Taxonomy filter with a D3.js sunburst vizualisation',
+			'fbviz': 'Based on a Financial Times graphic of historical England-Scotland games.<br>View historical scores between any pair of national teams/major clubs'
 		}
 
 		function projInfo(infoDiv, projName) {
